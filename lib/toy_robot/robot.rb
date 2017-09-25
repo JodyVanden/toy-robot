@@ -1,6 +1,6 @@
 module ToyRobot
   class Robot
-    attr_reader :position_x, :position_y
+    attr_reader :position_x, :position_y, :direction
 
     def initialize(position_x = 0, position_y = 0, direction = "EAST")
       @position_x = position_x
@@ -26,7 +26,10 @@ module ToyRobot
 
     def move
       case @direction
+      when "NORTH" then move_up
+      when "SOUTH" then move_down
       when "EAST" then move_forward
+      when "WEST" then move_backward
       end
     end
 
