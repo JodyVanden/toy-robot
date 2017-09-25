@@ -30,5 +30,12 @@ describe ToyRobot::CLI do
         subject.run([[:place, 1, 2, "NORTH"]])
       end
     end
+
+    context "MOVE command" do
+      it "passes a command MOVE to the simulation robot place" do
+        expect(simulation_robot_place).to receive(:move)
+        subject.run([:move])
+      end
+    end
   end
 end
