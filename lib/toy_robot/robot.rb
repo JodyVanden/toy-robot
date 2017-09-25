@@ -33,5 +33,14 @@ module ToyRobot
       end
     end
 
+    def turn_left
+      case @direction
+      when "NORTH" then @direction = "WEST"
+      when "SOUTH" then @direction = "EAST"
+      when "EAST" then @direction = "NORTH"
+      when "WEST" then @direction = "SOUTH"
+      end
+    end
+
   end
 end
