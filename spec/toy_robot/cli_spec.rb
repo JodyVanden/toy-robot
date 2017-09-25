@@ -37,5 +37,26 @@ describe ToyRobot::CLI do
         subject.run([:move])
       end
     end
+
+    context "LEFT command" do
+      it "passes a command LEFT to the simulation robot place" do
+        expect(simulation_robot_place).to receive(:turn_left)
+        subject.run([:turn_left])
+      end
+    end
+
+    context "RIGHT command" do
+      it "passes a command RIGHT to the simulation robot place" do
+        expect(simulation_robot_place).to receive(:turn_right)
+        subject.run([:turn_right])
+      end
+    end
+
+    context "REPORT command" do
+      it "passes a command REPORT to the simulation robot place" do
+        expect(simulation_robot_place).to receive(:report)
+        subject.run([:report])
+      end
+    end
   end
 end
