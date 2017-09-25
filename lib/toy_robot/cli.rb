@@ -7,5 +7,11 @@ module ToyRobot
       end
     end
 
+    def run(commands)
+      commands.each do |command, *args|
+        simulation_robot_place.send(command, *args)
+      end
+    end
+
   end
 end
