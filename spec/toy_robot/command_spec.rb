@@ -13,7 +13,18 @@ describe(ToyRobot::Command) do
       command = ToyRobot::Command.process("PLACE 2, 3, NORTH")
       expect(command).to eq([:not_valid, "PLACE 2, 3, NORTH"])
     end
-
   end
 
+  context "get MOVE" do
+    it "can manage MOVE command" do
+      command, *args = ToyRobot::Command.process("MOVE")
+      expect(command).to eq(:move)
+      expect(args).to be_empty
+    end
+
+    it "can NOT manage MOVE command with spaces" do
+      command = ToyRobot::Command.process("MOVE   ")
+      expect(command).to eq([:not_valid, "MOVE   "])
+    end
+  end
 end

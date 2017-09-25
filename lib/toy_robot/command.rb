@@ -4,6 +4,10 @@ module ToyRobot
     def self.process(command)
       if match = /\APLACE (?<x>\d),(?<y>\d),(?<direction>\w+)/.match(command)
       [:place, match[:x].to_i, match[:y].to_i, match[:direction]]
+      elsif /\AMOVE$/ =~ command
+        [:move]
+
+
       else
         [:not_valid, command]
       end
