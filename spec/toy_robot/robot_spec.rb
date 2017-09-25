@@ -44,7 +44,7 @@ describe ToyRobot::Robot do
   end
 end
 
-context "facing EAST" do
+context "robot facing EAST" do
   subject {ToyRobot::Robot.new(0,0,"EAST")}
 
   it "move east" do
@@ -56,14 +56,29 @@ context "facing EAST" do
     subject.turn_left
     expect(subject.direction).to eq("NORTH")
   end
+
+  it "direction change to SOUTH" do
+    subject.turn_right
+    expect(subject.direction).to eq("SOUTH")
+  end
 end
 
-context "should move up if facing NORTH" do
+context "robot facing NORTH" do
   subject {ToyRobot::Robot.new(0,0,"NORTH")}
 
   it "move North" do
     subject.move
     expect(subject.position_y).to eq(1)
+  end
+
+  it "direction change to WEST" do
+    subject.turn_left
+    expect(subject.direction).to eq("WEST")
+  end
+
+  it "direction change to EAST" do
+    subject.turn_right
+    expect(subject.direction).to eq("EAST")
   end
 end
 
