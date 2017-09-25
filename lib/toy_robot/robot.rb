@@ -19,5 +19,9 @@ module ToyRobot
       @position_y += 1
     end
 
+    def move_down
+      @position_y -= 1
+    end
+
   end
 end

@@ -34,7 +34,7 @@ describe ToyRobot::Robot do
   end
 
   it "moves down 4 space" do
-    4.times {subject.move_up}
+    4.times {subject.move_down}
     expect(subject.position_y).to eq(-4)
   end
 
