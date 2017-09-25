@@ -10,6 +10,8 @@ module ToyRobot
         [:left]
       elsif /\ARIGHT$/ =~ command
         [:right]
+      elsif /\AREPORT$/ =~ command
+        [:report]
       else
         [:not_valid, command]
       end

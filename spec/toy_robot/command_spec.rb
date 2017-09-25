@@ -53,4 +53,17 @@ describe(ToyRobot::Command) do
       expect(command).to eq([:not_valid, "RIGHT   "])
     end
   end
+
+  context "get REPORT" do
+    it "can manage REPORT command" do
+      command, *args = ToyRobot::Command.process("REPORT")
+      expect(command).to eq(:report)
+      expect(args).to be_empty
+    end
+
+    it "can NOT manage REPORT command with spaces" do
+      command = ToyRobot::Command.process("REPORT   ")
+      expect(command).to eq([:not_valid, "REPORT   "])
+    end
+  end
 end
