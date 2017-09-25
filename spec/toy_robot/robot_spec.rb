@@ -112,3 +112,15 @@ context "#report" do
   end
 end
 
+context "#report" do
+  subject{ToyRobot::Robot.new(3,2,"SOUTH")}
+
+  it "report the position of the robot" do
+  expect(subject.report).to eq({
+    position_x: 3,
+    position_y: 2,
+    direction: "SOUTH"
+    })
+  end
+end
+
