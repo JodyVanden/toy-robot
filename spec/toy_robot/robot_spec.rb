@@ -42,4 +42,12 @@ describe ToyRobot::Robot do
     2.times {subject.move_down}
     expect(subject.position_y).to eq(-2)
   end
+
+  context "should move forward if facing EAST"
+  subject {ToyRobot::Robot.new(0,0,"EAST")}
+
+  it "move east" do
+    subject.move
+    expect(subject.position_x).to eq(1)
+  end
 end
