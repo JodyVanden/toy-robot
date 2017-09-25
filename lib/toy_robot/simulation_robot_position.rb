@@ -1,5 +1,5 @@
 module ToyRobot
-  class SimulationRobotPosition
+  class SimulationRobotPlace
 
   end
 end
