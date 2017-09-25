@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe ToyRobot::SimulationRobotPlace do
+describe (ToyRobot::SimulationRobotPlace) do
   let(:table) {ToyRobot::Table.new(5,5)}
   subject {ToyRobot::SimulationRobotPlace.new(table)}
 
