@@ -7,4 +7,9 @@ describe ToyRobot::Robot do
     4.times {subject.move}
     expect(subject.position).to eq(4)
   end
+
+  it "moves 2 space" do
+    2.times {subject.move}
+    expect(subject.position).to eq(2)
+  end
 end
