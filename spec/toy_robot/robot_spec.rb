@@ -32,4 +32,14 @@ describe ToyRobot::Robot do
     4.times {subject.move_up}
     expect(subject.position_y).to eq(4)
   end
+
+  it "moves down 4 space" do
+    4.times {subject.move_up}
+    expect(subject.position_y).to eq(-4)
+  end
+
+  it "moves down 4 space" do
+    2.times {subject.move_down}
+    expect(subject.position_y).to eq(-2)
+  end
 end
