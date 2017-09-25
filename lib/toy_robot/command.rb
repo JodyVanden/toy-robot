@@ -8,8 +8,8 @@ module ToyRobot
         [:move]
       elsif /\ALEFT$/ =~ command
         [:left]
-
-
+      elsif /\ARIGHT$/ =~ command
+        [:right]
       else
         [:not_valid, command]
       end

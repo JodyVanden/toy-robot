@@ -41,4 +41,16 @@ describe(ToyRobot::Command) do
     end
   end
 
+  context "get RIGHT" do
+    it "can manage RIGHT command" do
+      command, *args = ToyRobot::Command.process("RIGHT")
+      expect(command).to eq(:right)
+      expect(args).to be_empty
+    end
+
+    it "can NOT manage RIGHT command with spaces" do
+      command = ToyRobot::Command.process("RIGHT   ")
+      expect(command).to eq([:not_valid, "RIGHT   "])
+    end
+  end
 end
