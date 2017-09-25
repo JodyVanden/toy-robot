@@ -27,4 +27,18 @@ describe(ToyRobot::Command) do
       expect(command).to eq([:not_valid, "MOVE   "])
     end
   end
+
+  context "get LEFT" do
+    it "can manage LEFT command" do
+      command, *args = ToyRobot::Command.process("LEFT")
+      expect(command).to eq(:left)
+      expect(args).to be_empty
+    end
+
+    it "can NOT manage LEFT command with spaces" do
+      command = ToyRobot::Command.process("LEFT   ")
+      expect(command).to eq([:not_valid, "LEFT   "])
+    end
+  end
+
 end

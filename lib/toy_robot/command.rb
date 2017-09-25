@@ -6,6 +6,8 @@ module ToyRobot
       [:place, match[:x].to_i, match[:y].to_i, match[:direction]]
       elsif /\AMOVE$/ =~ command
         [:move]
+      elsif /\ALEFT$/ =~ command
+        [:left]
 
 
       else
