@@ -6,8 +6,12 @@ module ToyRobot
       @position = position
     end
 
-    def move
+    def move_forward
       @position += 1
+    end
+
+    def move_backward
+      @position -= 1
     end
 
   end
