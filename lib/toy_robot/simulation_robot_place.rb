@@ -20,14 +20,17 @@ module ToyRobot
     end
 
     def turn_left
+      return unless robot_placed?
       robot.turn_left
     end
 
     def turn_right
+      return unless robot_placed?
       robot.turn_right
     end
 
     def report
+      return unless robot_placed?
       position = robot.report
       puts "Robot is at (#{position[:position_x]}, #{position[:position_y]})" +
         " and it's direction is #{position[:direction]}"
@@ -35,6 +38,10 @@ module ToyRobot
 
     def robot_placed?
       !robot.nil?
+    end
+
+    def not_valid(command)
+      puts "'#{command.strip}' is a not valid command"
     end
 
   end

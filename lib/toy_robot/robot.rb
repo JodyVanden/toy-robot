@@ -70,7 +70,6 @@ module ToyRobot
       when "WEST"
       [@position_x - 1, @position_y]
       end
-
     end
 
   end

@@ -30,6 +30,23 @@ describe (ToyRobot::SimulationRobotPlace) do
     expect { subject.move }.to_not raise_error
   end
 
+  it "turning an unplaced robot left does not cause an exception" do
+    expect { subject.turn_left }.to_not raise_error
+  end
+
+  it "turning an unplaced robot right does not cause an exception" do
+    expect { subject.turn_right }.to_not raise_error
+  end
+
+  it "asking an unplaced robot to report does not cause an exception" do
+    expect { subject.turn_right }.to_not raise_error
+  end
+
+  it "informs us when a command is not_valid" do
+    message = "'PLACE 1, 2, NORTH' is a not_valid command\n"
+    expect { subject.not_valid("PLACE 1, 2, NORTH") }.to output(message).to_stdout
+  end
+
   context "when robot has been placed" do
     let(:robot) { instance_double(ToyRobot::Robot, next_move:[0,0]) }
     before { allow(subject).to receive(:robot).and_return(robot) }
