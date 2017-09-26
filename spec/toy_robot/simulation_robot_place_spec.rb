@@ -18,6 +18,18 @@ describe (ToyRobot::SimulationRobotPlace) do
       expect(subject.robot).to be_nil
   end
 
+  it "does not have the robot placed by default" do
+    expect(subject.robot_placed?).to eq(false)
+  end
+
+  it "does not have the robot placed by default" do
+    expect(subject.robot_placed?).to eq(false)
+  end
+
+  it "does not move the robot" do
+    expect { subject.move }.to_not raise_error
+  end
+
   context "when robot has been placed" do
     let(:robot) { instance_double(ToyRobot::Robot, next_move:[0,0]) }
     before { allow(subject).to receive(:robot).and_return(robot) }
@@ -41,7 +53,10 @@ describe (ToyRobot::SimulationRobotPlace) do
       expect(robot).to receive(:report)
       subject.report
       end
+    it "has a placed robot" do
+      expect(subject.robot_placed?).to eq(true)
     end
+  end
 
     context "place the robot on the edge of the table" do
         before do

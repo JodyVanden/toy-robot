@@ -8,11 +8,12 @@ module ToyRobot
 
     def place(position_x,position_y,direction)
       if @table.valid_position?(position_x,position_y)
-      @robot = Robot.new(position_x, position_y, direction)
+        @robot = Robot.new(position_x, position_y, direction)
       end
     end
 
     def move
+      return unless robot_placed?
       if @table.valid_position?(*robot.next_move)
         robot.move
       end
@@ -30,6 +31,10 @@ module ToyRobot
       position = robot.report
       puts "Robot is at (#{position[:position_x]}, #{position[:position_y]})" +
         " and it's direction is #{position[:direction]}"
+    end
+
+    def robot_placed?
+      !robot.nil?
     end
 
   end
