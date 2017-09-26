@@ -1,7 +1,7 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe ToyRobot::CLI do
-  subject {ToyRobot::CLI.new}
+  subject { ToyRobot::CLI.new }
 
   # context "loading command" do
   #   it "load the commands from a file" do
@@ -20,13 +20,12 @@ describe ToyRobot::CLI do
     let(:simulation_robot_place) { instance_double(ToyRobot::SimulationRobotPlace) }
 
     before do
-      allow(subject).to receive(:simulation_robot_place){ simulation_robot_place }
+      allow(subject).to receive(:simulation_robot_place) { simulation_robot_place }
     end
-
 
     context "PLACE command" do
       it "passes a command PLACE to the simulation robot place" do
-        expect(simulation_robot_place).to receive(:place).with(1,2,"NORTH")
+        expect(simulation_robot_place).to receive(:place).with(1, 2, "NORTH")
         subject.run([[:place, 1, 2, "NORTH"]])
       end
     end

@@ -1,15 +1,15 @@
 
-lib = File.expand_path("../lib", __FILE__)
+lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "toy_robot/version"
+require 'toy_robot/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "toy_robot"
+  spec.name          = 'toy_robot'
   spec.version       = ToyRobot::VERSION
-  spec.authors       = ["Jody Vanden"]
-  spec.email         = ["jody.vanden@gmail.com"]
+  spec.authors       = ['Jody Vanden']
+  spec.email         = ['jody.vanden@gmail.com']
 
-  spec.summary       = %q{TOY ROBOT}
+  spec.summary       = %q{'TOY ROBOT'}
   spec.homepage      = "http:/www.blablalba.xyz"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
