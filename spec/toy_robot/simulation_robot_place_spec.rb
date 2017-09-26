@@ -42,4 +42,15 @@ describe (ToyRobot::SimulationRobotPlace) do
       subject.report
       end
     end
+
+    context "place the robot on the edge of the table" do
+        before do
+          subject.place(4, 0, "NORTH")
+        end
+
+      it "robot should not be able to go further then the table size" do
+        subject.move
+        expect(subject.report).to eq([4,0, "NORTH"])
+      end
+    end
 end

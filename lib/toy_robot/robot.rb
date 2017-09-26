@@ -59,5 +59,10 @@ module ToyRobot
       }
     end
 
+    def next_move
+
+
+    end
+
   end
 end

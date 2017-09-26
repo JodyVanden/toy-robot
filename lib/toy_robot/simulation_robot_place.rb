@@ -13,7 +13,9 @@ module ToyRobot
     end
 
     def move
-      robot.move
+      if @table.valid_position?(*robot.next_move)
+        robot.move
+      end
     end
 
     def turn_left
