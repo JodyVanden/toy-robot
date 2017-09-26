@@ -13,5 +13,10 @@ module ToyRobot
       end
     end
 
+    def simulation_robot_place
+
+
+    end
+
   end
 end
