@@ -43,7 +43,7 @@ describe (ToyRobot::SimulationRobotPlace) do
   end
 
   it "informs us when a command is not_valid" do
-    message = "'PLACE 1, 2, NORTH' is a not_valid command\n"
+    message = "'PLACE 1, 2, NORTH' is a not valid command\n"
     expect { subject.not_valid("PLACE 1, 2, NORTH") }.to output(message).to_stdout
   end
 
@@ -67,7 +67,7 @@ describe (ToyRobot::SimulationRobotPlace) do
       end
 
     it "tells the robot to report" do
-      expect(robot).to receive(:report)
+      expect(robot).to receive(:report) { { position_x: 3, position_y: 3, direction: "NORTH" } }
       subject.report
       end
     it "has a placed robot" do
@@ -77,12 +77,13 @@ describe (ToyRobot::SimulationRobotPlace) do
 
     context "place the robot on the edge of the table" do
         before do
-          subject.place(4, 0, "NORTH")
+          subject.place(1, 4, "NORTH")
         end
 
       it "robot should not be able to go further then the table size" do
         subject.move
-        expect(subject.report).to eq([4,0, "NORTH"])
+        message = "Robot is at (1, 4) and it's direction is NORTH\n"
+        expect { subject.report }.to output(message).to_stdout
       end
     end
 
