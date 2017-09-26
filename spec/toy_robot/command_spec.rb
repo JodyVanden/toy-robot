@@ -31,7 +31,7 @@ describe(ToyRobot::Command) do
   context "get LEFT" do
     it "can manage LEFT command" do
       command, *args = ToyRobot::Command.process("LEFT")
-      expect(command).to eq(:left)
+      expect(command).to eq(:turn_left)
       expect(args).to be_empty
     end
 
@@ -44,7 +44,7 @@ describe(ToyRobot::Command) do
   context "get RIGHT" do
     it "can manage RIGHT command" do
       command, *args = ToyRobot::Command.process("RIGHT")
-      expect(command).to eq(:right)
+      expect(command).to eq(:turn_right)
       expect(args).to be_empty
     end
 

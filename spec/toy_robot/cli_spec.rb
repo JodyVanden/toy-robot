@@ -9,7 +9,7 @@ describe ToyRobot::CLI do
       commands = subject.load_commands(path)
       expect(commands).to eq([
         [:place,2,3,"NORTH"],
-        [:right],
+        [:turn_right],
         [:move],
         [:report]
         ])

@@ -7,9 +7,9 @@ module ToyRobot
       elsif /\AMOVE$/ =~ command
         [:move]
       elsif /\ALEFT$/ =~ command
-        [:left]
+        [:turn_left]
       elsif /\ARIGHT$/ =~ command
-        [:right]
+        [:turn_right]
       elsif /\AREPORT$/ =~ command
         [:report]
       else
