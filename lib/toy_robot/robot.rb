@@ -60,7 +60,16 @@ module ToyRobot
     end
 
     def next_move
-
+      case @direction
+      when "NORTH"
+      [@position_x, @position_y + 1]
+      when "SOUTH"
+      [@position_x, @position_y - 1]
+      when "EAST"
+      [@position_x + 1, @position_y]
+      when "WEST"
+      [@position_x - 1, @position_y]
+      end
 
     end
 

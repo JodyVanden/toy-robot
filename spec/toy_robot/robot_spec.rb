@@ -80,6 +80,10 @@ context "robot facing NORTH" do
     subject.turn_right
     expect(subject.direction).to eq("EAST")
   end
+
+  it "next move is to (0, 1)" do
+    expect(subject.next_move).to eq([0, 1])
+  end
 end
 
 context "should move forward if facing SOUTH" do
@@ -89,6 +93,10 @@ context "should move forward if facing SOUTH" do
     subject.move
     expect(subject.position_y).to eq(-1)
   end
+
+  it "next move is to (0, -1)" do
+    expect(subject.next_move).to eq([0, -1])
+  end
 end
 
 context "should move forward if facing WEST" do
@@ -97,6 +105,10 @@ context "should move forward if facing WEST" do
   it "move WEST" do
     subject.move
     expect(subject.position_x).to eq(-1)
+  end
+
+  it "next move is to (-1, 0)" do
+    expect(subject.next_move).to eq([-1, 0])
   end
 end
 
