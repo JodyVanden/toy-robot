@@ -5,7 +5,7 @@ module ToyRobot
     def initialize(position_x = 0, position_y = 0, direction = 'EAST')
       @position_x = position_x
       @position_y = position_y
-      @direction = direction
+      @direction  = direction
     end
 
     def move_forward

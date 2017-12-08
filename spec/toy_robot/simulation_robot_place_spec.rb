@@ -102,4 +102,20 @@ describe (ToyRobot::SimulationRobotPlace) do
       expect { subject.report }.to output(message).to_stdout
     end
   end
+
+  context 'robot is not moving if there is a PLACE_OBJECT next to it' do
+    before do
+      subject.place(0,0,"NORTH")
+      subject.place_object
+    end
+
+    it 'cannot move if an object is placed in front' do
+      subject.move
+      message = "Robot is at (0, 0) and it's direction is NORTH\n"
+      expect { subject.report }.to output(message).to_stdout
+    end
+
+  end
+
+
 end

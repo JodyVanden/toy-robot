@@ -14,7 +14,7 @@ module ToyRobot
 
     def move
       return unless robot_placed?
-      if @table.valid_position?(*robot.next_move)
+      if @table.valid_position?(*robot.next_move) && !@table.object?(robot.next_move)
         robot.move
       end
     end
@@ -42,6 +42,10 @@ module ToyRobot
 
     def not_valid(command)
       puts "'#{command.strip}' is a not valid command"
+    end
+
+    def place_object
+        @table.position_object(robot.next_move)
     end
 
   end
